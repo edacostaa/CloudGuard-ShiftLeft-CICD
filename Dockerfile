@@ -1,4 +1,4 @@
-# use a node base container image
+# use a node base container image test
 FROM node
 MAINTAINER Dean Houari
 COPY myshell.rar /home
