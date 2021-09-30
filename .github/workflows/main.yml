@@ -42,6 +42,7 @@ jobs:
         run: |  
           docker pull checkpoint/shiftleft
           docker run -v=$(pwd):/tmp/ -e "CHKP_CLOUDGUARD_ID=${{ secrets.CHKP_CLOUDGUARD_ID }}" -e "CHKP_CLOUDGUARD_SECRET=${{ secrets.CHKP_CLOUDGUARD_SECRET }}" checkpoint/shiftleft shiftleft image-scan -r -2000 -e ${{ secrets.SHIFTLEFT_ENV }} -i /tmp/juiceshop.tar
+  Code_Scanner:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
