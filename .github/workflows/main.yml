@@ -36,8 +36,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Pull DVWA web application from vulnerables/web-dvwa
         run: |
-          docker pull bkimminich/juice-shop:latest
-          docker save bkimminich/juice-shop:latest -o juiceshop.tar
+          docker pull bkimminich/juice-shop
+          docker save bkimminich/juice-shop -o juiceshop.tar
       - name: Run Shiftleft assessment on saved image
         run: |  
           docker pull checkpoint/shiftleft
