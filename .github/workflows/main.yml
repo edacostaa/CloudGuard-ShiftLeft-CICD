@@ -41,7 +41,7 @@ jobs:
       - name: Run Shiftleft assessment on saved image
         run: |  
           docker pull checkpoint/shiftleft
-          docker run -v=$(pwd):/tmp/ -e "CHKP_CLOUDGUARD_ID=${{ secrets.CHKP_CLOUDGUARD_ID }}" -e "CHKP_CLOUDGUARD_SECRET=${{ secrets.CHKP_CLOUDGUARD_SECRET }}" checkpoint/shiftleft shiftleft image-scan -e d336b4bf-9b30-4677-a229-c57181141e0f -i /tmp/dvwa.tar
+          docker run -v=$(pwd):/tmp/ -e "CHKP_CLOUDGUARD_ID=${{ secrets.CHKP_CLOUDGUARD_ID }}" -e "CHKP_CLOUDGUARD_SECRET=${{ secrets.CHKP_CLOUDGUARD_SECRET }}" checkpoint/shiftleft shiftleft image-scan -r -2002 -e ${{ secrets.SHIFTLEFT_ENV }} -i /tmp/dvwa.tar
   Code_Scanner:
     runs-on: ubuntu-latest
     steps:
