@@ -1,7 +1,9 @@
 name: Main
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
     
 env:
   SPECTRAL_DSN: ${{ secrets.SPECTRAL_DSN }}
